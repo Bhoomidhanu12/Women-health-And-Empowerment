@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menstrual Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color:blanchedalmond;
+        }
+
+        #tracker-container {
+            max-width: 600px;
+            padding: 20px;
+            background-color:white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border:7px solid red;
+        }
+
+        h1 {
+            margin-top: 0;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            background-color:red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        #results {
+            margin-top: 20px;
+            text-align: left;
+        }
+
+        #present-cycle,
+        #past-periods,
+        #future-periods {
+            margin-top: 40px;
+            text-align: left;
+        }
+        
+        
+        
+        .tracker-container {
+            margin-top: 50px; 
+        }
+        .home-button{
+            position: fixed;
+            bottom:20px;
+            right:20px;
+            padding: 10px 20px;
+            background-color:white;
+            color: red;
+            text-decoration: none;
+            border-radius: 5px;
+            transition:black 0.3sec ease;
+        }
+        
+    </style>
+</head>
+<body>
+    <div>
+        <a href="./home.html" class="home-button">Go to home page</a>
+        </div>
+    <div id="tracker-container">
+        <h1>Menstrual Tracker</h1>
+        <form id="menstrualForm">
+            <label for="startDate">Menstrual Cycle Start Date:</label>
+            <input type="date" id="startDate" required><br>
+            <label for="cycleLength">Menstrual Cycle Length (days):</label>
+            <input type="number" id="cycleLength" min="21" required><br>
+            <button type="submit">Calculate</button>
+        </form>
+        <div id="results" style="display: none;">
+            <h2>Results</h2>
+            <div id="present-cycle">
+                <h3>Present Cycle Analysis</h3>
+                <p>Menstrual Cycle Start Date: <span id="presentStartDate"></span></p>
+                <p>Menstrual Cycle Length: <span id="presentCycleLength"></span> days</p>
+            </div>
+            <div id="past-periods">
+                <h3>Past Periods</h3>
+                <p>Previous Period Start Dates: <span id="pastPeriods"></span></p>
+            </div>
+            <div id="future-periods">
+                <h3>Future Periods</h3>
+                <p>Next Period Start Date: <span id="nextPeriodDate"></span></p>
+                <p>Fertile Window: <span id="fertileWindow"></span></p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('menstrualForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            calculateMenstrualCycle();
+        });
+
+        function calculateMenstrualCycle() {
+            const startDate = new Date(document.getElementById('startDate').value);
+            const cycleLength = parseInt(document.getElementById('cycleLength').value);
+
+            // Present cycle analysis
+            document.getElementById('presentStartDate').textContent = startDate.toDateString();
+            document.getElementById('presentCycleLength').textContent = cycleLength;
+
+            // Past periods (assuming cycle is regular)
+            const pastPeriods = [];
+            const today = new Date();
+            for (let i = 0; i < 3; i++) {
+                const pastPeriodDate = new Date(today);
+                pastPeriodDate.setDate(today.getDate() - cycleLength * (i + 1));
+                pastPeriods.push(pastPeriodDate.toDateString());
+            }
+            document.getElementById('pastPeriods').textContent = pastPeriods.join(', ');
+
+            // Calculate next period start date
+            const nextPeriodDate = new Date(startDate);
+            nextPeriodDate.setDate(startDate.getDate() + cycleLength);
+
+            // Calculate fertile window
+            const fertileStartDate = new Date(nextPeriodDate);
+            fertileStartDate.setDate(nextPeriodDate.getDate() - 14);
+            const fertileEndDate = new Date(nextPeriodDate);
+            fertileEndDate.setDate(nextPeriodDate.getDate() - 10);
+
+            document.getElementById('nextPeriodDate').textContent = nextPeriodDate.toDateString();
+            document.getElementById('fertileWindow').textContent = `${fertileStartDate.toDateString()} to ${fertileEndDate.toDateString()}`;
+
+            document.getElementById('results').style.display = 'block';
+        }
+    </script>
+    <div>
+        <a href="./home.html" class="home-button">Go to home page</a>
+        </div>
+</body>
+</html>

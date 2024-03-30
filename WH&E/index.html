@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+    }
+    @keyframes slideIn{
+        0%{opacity: 5;}
+        50%{opacity: 0;}
+        100%{opacity: 2;}
+    }
+    #animated-img{
+        animation: slideIn 1s ease-in-out;
+    }
+    
+    
+    .logopage{
+        height: 100px;
+        width:100%;
+    }
+    img{
+        height:600px;
+        width:450px;
+        
+    }
+    .main{
+        float: right;
+        margin-top: 100px;
+    }
+    h1{
+        font-size: 70px;
+        letter-spacing: 1px;
+        line-height: 100px;
+    }
+    p{
+        font-size: 20px;
+        float: right;
+    }
+    .highlighted{
+        color: red;
+        font-size: 40px;
+        font-weight: bold;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+    .home-button{
+        position: fixed;
+        bottom:20px;
+        right:20px;
+        padding: 10px 20px;
+        background-color:white;
+        color: red;
+        text-decoration: none;
+        border-radius: 5px;
+        transition:black 0.3sec ease;
+    }
+    
+</style>
+</head>
+<body>
+   
+    <section class="logopage">
+    <img src="./logo.png" id="animated-img">
+</section>
+<div class="main" id="animated-img">
+    
+        <h1><i>Welcome to</i> <br><span class="highlighted">Women Health And Empowerment</span></h1>
+        <p>A friendly guide to women..🤰</p>
+        <div>
+        <a href="./home.html" class="home-button">Go to home page</a>
+        </div>
+    
+</div>
+</body>
+</html>

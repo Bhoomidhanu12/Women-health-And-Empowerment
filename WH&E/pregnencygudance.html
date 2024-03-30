@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Three Column Cards</title>
+<style>
+    body{
+        background-color: antiquewhite;
+    }
+  /* Style for card container */
+  .card-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    
+    
+  }
+
+  /* Style for individual card */
+  .card {
+    width: calc(33.33% - 20px); /* Adjust as needed */
+    margin-bottom: 20px;
+    margin-top:90px;
+    box-shadow: 0 4px 8px black;
+    border-radius: 8px solid red;
+    overflow: hidden;
+    height: 450px;
+  }
+
+  /* Style for card image */
+  .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  /* Style for card content */
+  .card-content {
+    padding: 20px;
+  }
+
+  /* Style for card title */
+  .card-title {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+
+  /* Style for card text */
+  .card-text {
+    margin-bottom: 20px;
+  }
+
+  /* Style for button */
+  .card-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color:red;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  .home-button{
+    position: fixed;
+    bottom:20px;
+    right:20px;
+    padding: 10px 20px;
+    background-color:white;
+    color: red;
+    text-decoration: none;
+    border-radius: 5px;
+    transition:black 0.3sec ease;
+}
+  /* Hover effect for button */
+  .card-btn:hover {
+    background-color:blue;
+  }
+  nav {
+    
+    padding: 10px;
+
+    width: 100%; 
+ 
+    
+    left: 0; 
+    z-index: 1000; 
+    
+}
+
+img {
+    width: 200px; 
+    height: 50px;
+    padding: 0px;
+    border-radius: 50%;
+    
+
+}
+</style>
+</head>
+<body>
+  <nav class="navabar">
+    <img src="./logo.png">
+</nav>
+<div class="card-container">
+  
+  <div class="card">
+    <img src="./img1.jpeg" alt="Image 1">
+    <div class="card-content">
+      <h3 class="card-title">Nearby Hospital</h3>
+      <p class="card-text">Want to find a gynaecologist near you ?
+        To deal with all aspects of ur Pregnancy,Menstrual and other issues.
+      </p>
+      <a href="#" class="card-btn">Search</a>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <img src="./th.jpeg" alt="Image 2">
+    <div class="card-content">
+      <h3 class="card-title">Child care</h3>
+      <p class="card-text">The first few weeks of a baby's life are critical for its development and well-being.Proper care during this time can lay the foundation for a lifetime of good health.</p>
+      <a href="#" class="card-btn">Caring guide</a>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+    <img src="./th (1).jpeg" alt="Image 3" style="height:200px;">
+    <div class="card-content">
+      <h3 class="card-title">Pregnancy Yoga</h3>
+      <p class="card-text">Research shows that yoga may reduce stress,anxiety and depression in pregnancy.Due to this yoga you may have a shorter labour and more likely to have a vaginal delivary.</p>
+      <a href="#" class="card-btn">Start My Yoga</a>
+    </div>
+  </div>
+</div>
+<div>
+  <a href="./home.html" class="home-button">Go to home page</a>
+  </div>
+
+</body>
+</html>

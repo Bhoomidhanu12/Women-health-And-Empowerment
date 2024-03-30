@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Form</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: blanchedalmond;
+      }
+      
+      .container {
+        width: 400px;
+        margin: auto;
+        height: 800px;
+        border:2px solid red;
+        padding: 20px;
+        box-shadow: black;
+      }
+      
+      form {
+        margin-top: 20px;
+      }
+      
+      label {
+        font-weight: bold;
+      }
+      
+      input[type="text"],
+      input[type="email"],
+      input[type="tel"],
+      input[type="password"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+      }
+      
+      button {
+        padding: 10px 20px;
+        margin-top: 10px;
+        cursor: pointer;
+      }
+      
+      #join {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+      }
+      
+      #cancel {
+        background-color: #f44336;
+        color: white;
+        border: none;
+      }
+      
+      #join:hover,
+      #cancel:hover {
+        opacity: 0.8;
+      }
+      nav {
+        
+        padding: 10px;
+    
+        width: 100%; 
+     
+        
+        left: 0; 
+        z-index: 1000; 
+        
+    }
+    
+    img {
+        width: 200px; 
+        height: 50px;
+        padding: 0px;
+        border-radius: 50%;
+        
+    
+    }
+    .home-button{
+        position: fixed;
+        bottom:20px;
+        right:20px;
+        padding: 10px 20px;
+        background-color:white;
+        color: red;
+        text-decoration: none;
+        border-radius: 5px;
+        transition:black 0.3sec ease;
+    }
+    
+      
+</style>
+</head>
+<body>
+    <nav class="navabar">
+        <img src="./logo.png">
+    </nav>
+
+<div class="container">
+  <form action="#">
+    <label for="name">Name:</label><br>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="email">Email:</label><br>
+    <input type="email" id="email" name="email" required><br>
+
+    <label for="mobile">Mobile No:</label><br>
+    <input type="tel" id="mobile" name="mobile" required><br>
+
+    <label for="password">Password:</label><br>
+    <input type="password" id="password" name="password" required><br>
+
+    <label for="gender">Gender:</label><br>
+    <select id="gender" name="gender" required>
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+      <option value="other">Other</option>
+    </select><br>
+
+    <label for="dob">Date of Birth:</label><br>
+    <input type="date" id="dob" name="dob" required><br>
+
+    <label for="college">College:</label><br>
+    <input type="text" id="college" name="college" required><br>
+
+    <label for="about">Explain about yourself:</label><br>
+    <textarea id="about" name="about" rows="4" required></textarea><br>
+
+    <label for="calendar">Calendar:</label><br>
+    <input type="date" id="calendar" name="calendar"><br>
+
+    <label for="location">Location:</label><br>
+    <input type="text" id="location" name="location"><br>
+
+    <button type="submit" id="join">Join</button>
+    <button type="reset" id="cancel">Cancel</button>
+  </form>
+</div>
+<div>
+    <a href="./home.html" class="home-button">Go to home page</a>
+    </div>
+
+</body>
+</html>
